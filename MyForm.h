@@ -1,9 +1,5 @@
-#pragma once
-#include <fstream>
-#include <string>
-#include <time.h>
-#include <msclr\marshal_cppstd.h>
-#include "sha256.h"
+﻿#pragma once
+#include "MyForm1.h"
 namespace UserAuthSystemWinFormsCpp {
 
 	using namespace System;
@@ -16,11 +12,9 @@ namespace UserAuthSystemWinFormsCpp {
 	/// <summary>
 	/// Summary for MyForm
 	/// </summary>
-	public ref class MyForm : public System::Windows::Forms::Form
-	{
+	public ref class MyForm : public System::Windows::Forms::Form {
 	public:
-		MyForm(void)
-		{
+		MyForm(void) {
 			InitializeComponent();
 			//
 			//TODO: Add the constructor code here
@@ -31,10 +25,8 @@ namespace UserAuthSystemWinFormsCpp {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~MyForm()
-		{
-			if (components)
-			{
+		~MyForm() {
+			if (components) {
 				delete components;
 			}
 		}
@@ -49,21 +41,19 @@ namespace UserAuthSystemWinFormsCpp {
 
 	private: System::Windows::Forms::Button^ bRegister;
 	private: void Login();
-	private: void Register();
 
 	private:
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container ^components;
+		System::ComponentModel::Container^ components;
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
 		/// Required method for Designer support - do not modify
 		/// the contents of this method with the code editor.
 		/// </summary>
-		void InitializeComponent(void)
-		{
+		void InitializeComponent(void) {
 			System::ComponentModel::ComponentResourceManager^ resources = (gcnew System::ComponentModel::ComponentResourceManager(MyForm::typeid));
 			this->lblUsr = (gcnew System::Windows::Forms::Label());
 			this->lblPwd = (gcnew System::Windows::Forms::Label());
@@ -175,8 +165,9 @@ namespace UserAuthSystemWinFormsCpp {
 	private: System::Void bLogin_Click(System::Object^ sender, System::EventArgs^ e) {
 		Login();
 	}
-private: System::Void bRegister_Click(System::Object^ sender, System::EventArgs^ e) {
-	Register();
-}
-};
+	private: System::Void bRegister_Click(System::Object^ sender, System::EventArgs^ e) {
+		Form^ rgForm = gcnew MyForm1;
+		rgForm->Show();
+	}
+	};
 }
